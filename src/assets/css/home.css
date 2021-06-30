@@ -1,0 +1,141 @@
+.hero {
+  background-image: url(./../images/hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+.over-layed {
+  background-image: url(./../images/overlayed-image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 60vh;
+  position: relative;
+}
+
+.over-lay-bg-color {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #3f3f3f6c;
+}
+.hero-subtext {
+  font-size: 1.4rem;
+  color: var(--bg-color);
+}
+
+.colored {
+  color: var(--dark-color) !important;
+  padding: 0 6px !important;
+  border-radius: 10px 0 10px 0 !important;
+}
+
+.hero-title {
+  font-size: 2.9rem;
+}
+
+.hero-btn {
+  font-size: 1.4rem !important;
+  margin: 20px 0;
+  padding: 5px 30px !important;
+}
+
+.call-to-action-text,
+.call-to-action-title {
+  color: #fff;
+}
+
+.branches,
+.services {
+  padding: 6em 0;
+}
+
+.services-title {
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.services-text {
+  font-size: 0.9rem;
+}
+
+.branch-item {
+  overflow: hidden !important;
+  margin-bottom: 20px;
+}
+.avatar {
+  width: 100% !important;
+  height: 100% !important;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 15px;
+}
+
+.card-body-image {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+.card-body-image:hover .over-lay-bg-color,
+.card-body-image:hover .overlay {
+  opacity: 1;
+  border-radius: 15px;
+}
+a.overlay small {
+  font-size: 0.9rem;
+  /* color: var(--orange-color); */
+}
+a.overlay span {
+  font-size: 1.4rem;
+}
+a.overlay {
+  color: white;
+  min-width: 100%;
+}
+
+a.overlay:hover {
+  color: white !important;
+  opacity: 0.8 !important;
+}
+.card-body-image .over-lay-bg-color {
+  opacity: 0;
+}
+
+.card-body-image .overlay {
+  opacity: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  text-align: center;
+  color: white;
+  transform: translate(-50%, 50%);
+  transition: 0.5s ease;
+}
+
+.custom-card-body {
+  padding: 0rem !important;
+}
+
+.custom-card-body span {
+  margin-right: 20px;
+}
+/* 
+.custom-card {
+  border-radius: 20px !important;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: none !important;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+} */
+
+.custom-overlay-bg {
+  background-color: var(--orange-color);
+  border-radius: 0px !important;
+  padding: 7px 0;
+}

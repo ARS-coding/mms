@@ -2,12 +2,12 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBVDFRtYau1lnVIoIE61vUghEHwWd_B28I",
-  authDomain: "routing-project-76bcc.firebaseapp.com",
-  projectId: "routing-project-76bcc",
-  storageBucket: "routing-project-76bcc.appspot.com",
-  messagingSenderId: "249948422705",
-  appId: "1:249948422705:web:846595196fb75aa9c64b10"
+  apiKey: "AIzaSyBfoOW--l_p3r4vayZZZIqj0lHzboffQCo",
+  authDomain: "mms-project-2a291.firebaseapp.com",
+  projectId: "mms-project-2a291",
+  storageBucket: "mms-project-2a291.appspot.com",
+  messagingSenderId: "994317126203",
+  appId: "1:994317126203:web:c6247c93e7ddd27394aa1e"
 };
 
 firebase.initializeApp(firebaseConfig);

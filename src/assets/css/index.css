@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+:root {
+  --primary-color: #465362;
+  --secondary-color: #82a3a1;
+  --orange-color: #ff5a00;
+  --hover-color: #465362;
+  --bg-color: #fcfcfc;
+  --dark-color: #262626;
+  --primary-font: "Poppins", sans-serif;
+  --secondary-font: "Yellowtail", cursive;
+}
+
+body {
+  font-family: var(--primary-font) !important;
+  background-color: var(--bg-color) !important;
+}
+
+.secondary-font {
+  font-family: var(--secondary-font);
+}
+.width-full {
+  height: 100%;
+}
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.text-right {
+  text-align: right;
+}
+.make-to-right {
+  margin-right: auto;
+}
+
+.min-h-100 {
+  min-height: 100vh;
+}
+
+.mt-100px {
+  margin-top: 100px;
+}
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: var(--hover-color) !important;
+}
+
+.btn-custom {
+  border: none !important;
+  border-radius: 3px !important;
+}
+.btn-custom a {
+  color: white !important;
+}
+.custom-btn-submit {
+  border: none;
+  /* max-width: 25rem; */
+  padding: 2px 4rem !important;
+  /* padding-bottom: 5px !important; */
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: auto;
+}
+.custom-btn-submit,
+.light-colored {
+  color: var(--bg-color);
+  padding: 0 6px;
+  border-radius: 10px 0 10px 0;
+}
+
+.custom-modal-button:hover {
+  color: var(--hover-color) !important;
+}
+
+.custom-modal-button {
+  color: var(--dark-color) !important;
+  float: right;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  font-size: 1.2rem !important;
+}
+
+.custom-modal-body {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 0px 0px !important;
+}
+
+.modal-content {
+  border-radius: 20px 0 20px 0 !important;
+  overflow: hidden;
+}
+
+/* Footer styles START */
+
+.custom-footer {
+  padding: 20px 0;
+  background-color: #ff5a00;
+}
+
+.custom-footer .custom-icon {
+  font-size: 1.4rem !important;
+}
+
+.footer-item {
+  margin: 0 10px;
+  color: var(--bg-color);
+  user-select: none;
+}
+
+.footer-item:hover {
+  color: var(--dark-color);
+}
+/* Footer styles END */

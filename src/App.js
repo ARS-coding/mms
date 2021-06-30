@@ -1,25 +1,51 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from './components/Home/index'
+import About from './components/About/index'
+import Contact from './components/Contact/index'
+import './assets/css/index.css'
+import SiteNavBar from './components/global/SiteNavBar';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import NotFound from './components/global/NotFound';
+import AddBranchForm from './components/Forms/AddBranchForm';
+import { transitions, positions, Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
+import Footer from "./components/global/Footer"
+import Board from './components/Board/Board';
+
+// optional configuration
+const options = {
+  // you can also just use 'bottom center'
+  position: positions.BOTTOM_CENTER,
+  timeout: 5000,
+  offset: '30px',
+  // you can also just use 'scale'
+  transition: transitions.SCALE
+}
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AlertProvider template={AlertTemplate} {...options}>
+      <div className="app">
+        <Router>
+          <SiteNavBar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/add-branch" component={AddBranchForm} />
+            <Route exact path="/branch/:id" component={Board} />
+            <Route component={NotFound} /> {/* If nothing gets found, select the last page which is the not found page. */}
+          </Switch>
+          <Footer />
+        </Router>
+      </div>
+    </AlertProvider>
   );
 }
 
