@@ -5,9 +5,8 @@ import './../../assets/css/add_branch_form.css'
 
 const AddBranchForm = ({ postData }) => (
 
-
-    <div className="add-branch-form">
-        <h3 className="form-title">Add new <span className="bg-dark light-colored">Branch!</span></h3>
+    <div className="custom-form">
+        <h3 className="form-title">Add a new <span className="bg-dark light-colored">Branch!</span></h3>
         <Formik
             initialValues={{ branchName: '', branchLocation: '', branchAvatar: '' }}
             validate={values => {

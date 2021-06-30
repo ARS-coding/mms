@@ -25,7 +25,11 @@ body {
 .flex {
   display: flex;
 }
-
+.divider {
+  background-color: #4653623a;
+  width: 100%;
+  height: 1px;
+}
 .flex-col {
   flex-direction: column;
 }
@@ -54,6 +58,10 @@ body {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .text-right {
   text-align: right;
 }
@@ -74,6 +82,10 @@ a {
 
 a:hover {
   color: var(--hover-color) !important;
+}
+
+.custom-form {
+  padding: 30px 40px;
 }
 
 .btn-custom {
@@ -145,3 +157,23 @@ a:hover {
   color: var(--dark-color);
 }
 /* Footer styles END */
+
+/* Preloader */
+.preloader-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20009;
+  background-color: #f3f3f3;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.preloader-wrap.loaded {
+  visibility: hidden;
+  opacity: 0;
+}

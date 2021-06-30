@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+
 const Hero = () => {
     return (
         <section className="flex align-center justify-start hero">

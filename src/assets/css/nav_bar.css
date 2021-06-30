@@ -3,6 +3,11 @@
   color: var(--orange-color) !important;
 }
 
+.customs-logo-preloaded {
+  font-size: 3rem;
+  color: var(--orange-color) !important;
+}
+
 .bg-custom {
   background-color: #f3f3f3;
 }
@@ -30,7 +35,5 @@
   z-index: 1;
   left: 0;
   right: 0;
-  box-shadow: rgb(0 0 0 / 25%) 0px -20px 3px 20px,
-    rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px,
-    rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
+  box-shadow: rgb(0 0 0 / 25%) 0px -20px 3px 20px;
 }

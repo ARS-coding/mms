@@ -15,6 +15,7 @@ import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
 import Footer from "./components/global/Footer"
 import Board from './components/Board/Board';
+import Preload from './components/global/Preload';
 
 // optional configuration
 const options = {
@@ -33,6 +34,7 @@ function App() {
     <AlertProvider template={AlertTemplate} {...options}>
       <div className="app">
         <Router>
+          <Preload />
           <SiteNavBar />
           <Switch>
             <Route exact path="/" component={Home} />
@@ -50,3 +52,9 @@ function App() {
 }
 
 export default App;
+
+// 1. make the style of the board 
+// 2. add item
+// 3. make control the board
+// 4. style the item 
+// 5. control the item
