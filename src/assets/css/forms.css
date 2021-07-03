@@ -27,3 +27,31 @@
   text-align: center;
   margin-bottom: 40px;
 }
+
+.with-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.with-list ul {
+  /* list-style: none; */
+  font-size: 0.8rem;
+}
+
+.with-list button {
+  max-width: 100px;
+  background-color: rgb(66, 97, 66);
+  border-radius: 5px;
+  margin-left: 2px;
+  color: #fff;
+  border: none;
+  min-height: 38px;
+}
+
+.m5-left {
+  margin-left: 5px;
+}
+.m5-right {
+  margin-right: 5px;
+}

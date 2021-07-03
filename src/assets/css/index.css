@@ -62,6 +62,9 @@ body {
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
 .text-right {
   text-align: right;
 }

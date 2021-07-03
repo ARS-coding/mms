@@ -7,22 +7,34 @@ import './../../assets/css/board.css'
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import db from './../../firebaseConfig'
 import ControlNav from './ControlNav';
+import AddMealForm from './../Forms/AddMealForm'
+import VerticallyCenteredModal from './../global/VerticallyCenteredModal'
 
 
 const Board = (props) => {
     const [meals, setMeals] = useState([])
+    const [modalShow, setModalShow] = useState(false);
+    const [item, setItem] = useState({});
+
     const docId = props.match.params.id
     useEffect(() => {
         fetchItems()
     }, [])
     const fetchItems = async () => {
-        const items = await db.collection('branches').doc(docId).collection('meals').get()
-        const branchesArray = await items.docs.map(doc => {
-            return { id: doc.id, ...doc.data() }
-        })
-        setMeals(branchesArray)
-    }
 
+        db.collection("branches").doc(docId).collection('meals')
+            .onSnapshot((snapshot) => {
+                const mealsArray = snapshot.docs.map(doc => {
+                    return { id: doc.id, ...doc.data() }
+                })
+                setMeals(mealsArray)
+            })
+        // const items = await db.collection('branches').doc(docId).collection('meals').get()
+        // const branchesArray = await items.docs.map(doc => {
+        //     return { id: doc.id, ...doc.data() }
+        // })
+        // setMeals(branchesArray)
+    }
     const columnsFromBackend = {
         'to-cook': {
             name: "To Coock",
@@ -91,10 +103,17 @@ const Board = (props) => {
         }
     };
 
+
+    const editItem = async (id) => {
+        const res = await db.collection('branches').doc(docId).collection('meals').doc(id).get()
+        setItem(res.data())
+        setModalShow(true)
+    }
+
     return (
         <main className="board">
             <Container className="mt-100px min-h-100">
-                <ControlNav />
+                <ControlNav boardId={docId} />
                 <Row>
                     <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
                         <DragDropContext
@@ -102,16 +121,16 @@ const Board = (props) => {
                         >
                             {Object.entries(columns).map(([columnId, column], index) => {
                                 return (
-                                    <Col lg={4} md={12} className="to-do"
+                                    <Col lg={4} md={12} className="to-do "
                                         style={{
                                             display: "flex",
                                             flexDirection: "column",
-                                            alignItems: "center"
+                                            alignItems: "center",
                                         }}
                                         key={columnId}
                                     >
                                         <h2 className="column-title">{column.name}</h2>
-                                        <div style={{ margin: 8 }}>
+                                        <div style={{ margin: 8, height: '100%' }}>
                                             <Droppable className="parent" droppableId={columnId} key={columnId}>
                                                 {(provided, snapshot) => {
                                                     return (
@@ -124,9 +143,9 @@ const Board = (props) => {
                                                                     : "#f3f3f3",
                                                                 padding: 6,
                                                                 minWidth: 330,
-                                                                minHeight: 500
+                                                                height: "100%"
                                                             }}
-                                                            className="field-column field-body"
+                                                            className="field-column field-body "
                                                         >
                                                             {column.items.map((item, index) => {
                                                                 return (
@@ -138,7 +157,6 @@ const Board = (props) => {
                                                                         {(provided, snapshot) => {
                                                                             return (
                                                                                 <div
-                                                                                    onClick={e => console.log(e)}
                                                                                     ref={provided.innerRef}
                                                                                     {...provided.draggableProps}
                                                                                     {...provided.dragHandleProps}
@@ -160,10 +178,10 @@ const Board = (props) => {
 
                                                                                     <div className='flex flex-col'>
                                                                                         <div className="item-image">
-                                                                                            <img src={item.mealUrl} />
+                                                                                            <img src={item.mealUrl} alt={item.title} />
                                                                                         </div>
                                                                                         <div className='item-body'>
-                                                                                            <h2 className="item-title">
+                                                                                            <h2 onClick={e => editItem(item.id)} className="item-title">
                                                                                                 {item.title}
                                                                                             </h2>
                                                                                         </div>
@@ -222,6 +240,14 @@ const Board = (props) => {
 
 
             </Container>
+            <VerticallyCenteredModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                title="Add a new Branch"
+            >
+
+                <AddMealForm initialValuesOnEdit={item} />
+            </VerticallyCenteredModal>
         </main >
     )
 }

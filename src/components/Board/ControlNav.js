@@ -3,17 +3,20 @@ import VerticallyCenteredModal from './../global/VerticallyCenteredModal'
 import AddMealForm from './../Forms/AddMealForm'
 import { Row, Col, Button } from 'react-bootstrap';
 import { useAlert } from 'react-alert'
+import db from './../../firebaseConfig'
 
-const ControlNav = () => {
+const ControlNav = ({ boardId }) => {
     const [modalShow, setModalShow] = useState(false);
     const alert = useAlert()
+
     const handleSubmit = async (values) => {
         console.log('values :', values);
-        // await db.collection('branches').add(values)
+        await db.collection('branches').doc(boardId).collection('meals').add(values)
         setModalShow(false)
         alert.success('Congrats you have added a new Branch!')
-        // setAlert('user added successfully , you are being redirected to users')
     }
+
+
     return (
         <>
             <Row className="nav-bar-control">

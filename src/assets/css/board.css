@@ -1,12 +1,16 @@
 .board {
   margin-bottom: 40px;
+  min-height: 100vh;
 }
 .fields {
   min-height: 100vh;
+  height: 100%;
 }
 
 .field-body {
   border-radius: 8px;
+  min-height: 100vh;
+  height: 100% !important;
 }
 
 .to-do .col-body-field {

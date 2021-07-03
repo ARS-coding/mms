@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import CustomErrorMessage from './CustomErrorMessage'
-import './../../assets/css/add_branch_form.css'
+import './../../assets/css/forms.css'
 
 const AddBranchForm = ({ postData }) => (
 
