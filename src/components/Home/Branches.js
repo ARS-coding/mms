@@ -11,6 +11,7 @@ const Branches = () => {
 
     useEffect(() => {
         fetchBranches()
+        /* eslint-disable-next-line */
     }, [])
     const fetchBranches = async () => {
         setMessage('Loading ...')
