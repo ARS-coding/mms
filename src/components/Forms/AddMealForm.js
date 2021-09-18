@@ -3,6 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import CustomErrorMessage from './CustomErrorMessage'
 import './../../assets/css/forms.css'
 
+/* eslint-disable */
+
 function AddMealForm({ postData, initialValuesOnEdit }) {
     console.log('initialValuesOnEdit :', initialValuesOnEdit);
 
