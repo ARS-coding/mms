@@ -13,7 +13,7 @@ const Hero = () => {
                 <Row>
                     <Col>
                         <p className="hero-subtext">We are the solution for your restaurant's <span className="bg-light colored">.Branches</span></p>
-                        <h2 className="hero-title">Manage You menu's meals.</h2>
+                        <h2 className="hero-title">Manage Your Menu&#38;Meals.</h2>
                         <Button className="bg-dark btn-custom hero-btn">Get Started</Button>
                     </Col>
                 </Row>
