@@ -15,10 +15,6 @@ const Branches = () => {
     const fetchBranches = async () => {
         setMessage('Loading ...')
 
-        // const res = await db.collection("branches").get()
-        // const branchesArray = await res.docs.map(doc => {
-        //     return { id: doc.id, ...doc.data() }
-        // })
         db.collection("branches").onSnapshot((snapshot) => {
             const branchesArray = snapshot.docs.map(doc => {
                 return { id: doc.id, ...doc.data() }
@@ -26,8 +22,6 @@ const Branches = () => {
             setBranches(branchesArray)
         })
         branches.length === 0 ? setMessage("You have no Branches ...") : setMessage("")
-
-        // setBranches(branchesArray)
     }
 
     return (
@@ -56,11 +50,6 @@ const Branches = () => {
                             message
                     }
                 </Row>
-                {/* <Row>
-                    <Col>
-                        <button>See all branches</button>
-                    </Col>
-                </Row> */}
             </Container>
         </section >
     )
