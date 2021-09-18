@@ -38,8 +38,8 @@ function App() {
           <SiteNavBar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/about-us" component={About} />
+            <Route exact path="/contact-us" component={Contact} />
             <Route exact path="/add-branch" component={AddBranchForm} />
             <Route exact path="/branch/:id" component={Board} />
             <Route component={NotFound} /> {/* If nothing gets found, select the last page which is the not found page. */}

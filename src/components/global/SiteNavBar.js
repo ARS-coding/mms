@@ -3,7 +3,6 @@ import { Navbar } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-// import { NavDropdown } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import './../../assets/css/nav_bar.css'
 import { PlusLg } from 'react-bootstrap-icons';
@@ -19,7 +18,6 @@ const SiteNavBar = () => {
     await db.collection('branches').add(values)
     setModalShow(false)
     alert.success('Congrats you have added a new Branch!')
-    // setAlert('user added successfully , you are being redirected to users')
   }
 
   return (
@@ -30,19 +28,10 @@ const SiteNavBar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              {/* <Nav.Link> <Link to="/">Home</Link></Nav.Link> */}
-              <Link className="link-item" to="/about">how wae are?</Link>
-              <Link className="link-item" to="/contact">Keep in touch!</Link>
-              {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-          </NavDropdown> */}
+              <Link className="link-item" to="/about-us">how wae are?</Link>
+              <Link className="link-item" to="/contact-us">Keep in touch!</Link>
             </Nav>
             <Nav>
-              {/*  className="d-none d-lg-block" */}
               <Button onClick={() => setModalShow(true)} className="bg-dark btn-custom">
                 <div>
                   <div className="flex align-center justify-center">
