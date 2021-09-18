@@ -19,9 +19,10 @@ const Board = (props) => {
     const docId = props.match.params.id
     useEffect(() => {
         fetchItems()
+        /* eslint-disable-next-line */
     }, [])
-    const fetchItems = async () => {
 
+    const fetchItems = async () => {
         db.collection("branches").doc(docId).collection('meals')
             .onSnapshot((snapshot) => {
                 const mealsArray = snapshot.docs.map(doc => {
@@ -29,11 +30,6 @@ const Board = (props) => {
                 })
                 setMeals(mealsArray)
             })
-        // const items = await db.collection('branches').doc(docId).collection('meals').get()
-        // const branchesArray = await items.docs.map(doc => {
-        //     return { id: doc.id, ...doc.data() }
-        // })
-        // setMeals(branchesArray)
     }
     const columnsFromBackend = {
         'to-cook': {
@@ -53,6 +49,7 @@ const Board = (props) => {
 
     useEffect(() => {
         setColumns(columnsFromBackend);
+        /* eslint-disable-next-line */
     }, [meals])
     // branches(collection).branch(document).meals(collection)
 
