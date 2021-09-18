@@ -28,8 +28,8 @@ const SiteNavBar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Link className="link-item" to="/about-us">how wae are?</Link>
-              <Link className="link-item" to="/contact-us">Keep in touch!</Link>
+              <Link className="link-item" to="/about-us">About Us</Link>
+              <Link className="link-item" to="/contact-us">Contact Us</Link>
             </Nav>
             <Nav>
               <Button onClick={() => setModalShow(true)} className="bg-dark btn-custom">
