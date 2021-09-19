@@ -1,11 +1,13 @@
 import React from "react";
-import { Twitter } from 'react-bootstrap-icons';
-import { Github } from 'react-bootstrap-icons';
-import { Linkedin } from 'react-bootstrap-icons';
+
 import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+
+import { Twitter } from 'react-bootstrap-icons';
+import { Github } from 'react-bootstrap-icons';
+import { Linkedin } from 'react-bootstrap-icons';
 
 import "./index.scss";
 
