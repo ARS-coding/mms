@@ -1,0 +1,25 @@
+.custom-footer {
+    .container {
+        .row {
+            & > div {
+                padding: 0 !important;
+
+                small {
+                    transition: all ease-in-out 300ms;
+
+                    &:hover {
+                        transition: all ease-in-out 300ms;
+                    }
+                    
+                    span {
+                        transition: all ease-in-out 300ms;
+                        
+                        &:hover {
+                            transition: all ease-in-out 300ms;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
