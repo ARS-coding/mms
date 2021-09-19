@@ -19,6 +19,14 @@
                         }
                     }
                 }
+
+                svg {
+                    transition: all ease-in-out 300ms;
+                    
+                    &:hover {
+                        transition: all ease-in-out 300ms;
+                    }
+                }
             }
         }
     }
