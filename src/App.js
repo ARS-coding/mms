@@ -12,8 +12,8 @@ import {
 import NotFound from './components/global/NotFound';
 import AddBranchForm from './components/Forms/AddBranchForm';
 import { transitions, positions, Provider as AlertProvider } from 'react-alert'
-import AlertTemplate from 'react-alert-template-basic'
-import Footer from "./components/global/Footer"
+import AlertTemplate from 'react-alert-template-basic';
+import Footer from "./components/global/Footer/index";
 import Board from './components/Board/Board';
 import Preload from './components/global/Preload';
 
